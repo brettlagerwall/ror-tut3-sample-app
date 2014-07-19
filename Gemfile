@@ -27,10 +27,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :development do
-  gem 'rspec-rails', '2.0.1'
+  gem 'rspec-rails', '2.12'
 end
 
 group :test do
-  gem 'rspec', '2.0.1'
+  gem 'rspec', '2.12'
   gem 'webrat', '0.7.1'
 end
