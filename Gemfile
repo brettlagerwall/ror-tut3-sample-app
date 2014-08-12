@@ -29,14 +29,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :development do
-  gem 'rspec-rails', '2.12'
+  gem 'rspec-rails', '2.14.0.rc1'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
 
 group :test do
-  gem 'rspec', '2.12'
+  gem 'rspec', '2.14.0.rc1'
   gem 'database_cleaner', '1.3.0'
   gem 'webrat', '0.7.1'
-  gem 'minitest', '5.4.0'
+  gem 'minitest', '~> 5.1.0'
   gem 'factory_girl_rails', '1.0'
 end
