@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   match '/signup', :to => 'users#new', :via => [:get, :post]
   match '/signin', :to => 'sessions#new', :via => [:get, :post]
-  match '/signout', :to => 'sessions#destroy', :via => [:get, :post]
+  match '/signout', :to => 'sessions#destroy', :via => [:get, :delete]
   match '/contact', :to => 'pages#contact', :via => [:get, :post]
   match '/about', :to => 'pages#about', :via => [:get, :post]
   match '/help', :to => 'pages#help', :via => [:get, :post]

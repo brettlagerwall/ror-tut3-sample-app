@@ -1,0 +1,21 @@
+<h1>All users</h1>
+
+<% if will_paginate(@users) %>
+  <%= will_paginate(@users).gsub(/<li.*?>/, '') \
+                           .gsub(/<\/li>/, '') \
+                           .gsub(/<ul>/, '') \
+                           .gsub(/<\/ul>/, '') \
+                           .html_safe %>
+<% end %>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<% if will_paginate(@users) %>
+  <%= will_paginate(@users).gsub(/<li.*?>/, '') \
+                           .gsub(/<\/li>/, '') \
+                           .gsub(/<ul>/, '') \
+                           .gsub(/<\/ul>/, '') \
+                           .html_safe %>
+<% end %>

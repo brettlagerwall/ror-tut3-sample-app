@@ -57,4 +57,25 @@ describe "Users" do
       end
     end
   end
+
+  describe "deleting users" do
+    describe "when admin" do
+      it "should provide link to delete user" do
+        user = Factory(:user)
+        user.toggle!(:admin)
+        integration_sign_in(user)
+        visit users_path
+        response.should have_selector("a", :content => "delete")
+      end
+    end
+
+    describe "when non-admin user" do
+      it "should not provide link to delete user" do
+        user = Factory(:user)
+        integration_sign_in(user)
+        visit users_path
+        response.should_not have_selector("a", :content => "delete")
+      end
+    end
+  end
 end

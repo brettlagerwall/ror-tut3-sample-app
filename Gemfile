@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'gravatar_image_tag', '0.1.0'
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -31,6 +33,7 @@ gem 'spring',        group: :development
 group :development do
   gem 'rspec-rails', '2.14.0.rc1'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem 'faker', '0.3.1'
 end
 
 group :test do
