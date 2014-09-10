@@ -1,0 +1,12 @@
+<% unless @feed_items.empty? %>
+  <table class="microposts" summary="User microposts">
+    <%= render :partial => 'shared/feed_item', :collection => @feed_items %>
+  </table>
+  <% if will_paginate(@feed_items) %>
+    <%= will_paginate(@feed_items).gsub(/<li.*?>/, '') \
+                                  .gsub(/<\/li>/, '') \
+                                  .gsub(/<ul>/, '') \
+                                  .gsub(/<\/ul>/, '') \
+                                  .html_safe %>
+  <% end %>
+<% end %>

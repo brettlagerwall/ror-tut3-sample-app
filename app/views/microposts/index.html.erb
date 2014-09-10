@@ -1,11 +1,10 @@
+<h1>
+  Microposts for <%= User.find(params[:user_id]).name %>
+</h1>
 <table class="profile" summary="Profile information">
   <tr>
     <td class="main">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-      <% unless @user.microposts.empty? %>
+      <% unless @microposts.empty? %>
         <table class="microposts" summary="User microposts">
           <%= render @microposts %>
         </table>
@@ -17,11 +16,6 @@
                                         .html_safe %>
         <% end %>
       <% end %>
-    </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-      <strong>Microposts</strong> <%= @user.microposts.count %>
     </td>
   </tr>
 </table>
