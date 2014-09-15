@@ -4,9 +4,16 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
+  resources :relationships, :only => [:create, :destroy]
 
   resources :users do
     resources :microposts
+  end
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
   end
 
   get 'pages/home'

@@ -1,0 +1,28 @@
+<table summary="Information about following/followers">
+  <tr>
+    <td class="main">
+      <h1><%= @title %></h1>
+
+      <% unless @users.empty? %>
+        <ul class="users">
+          <%= render @users %>
+        </ul>
+        <% if will_paginate(@users) %>
+          <%= will_paginate(@users).gsub(/<li.*?>/, '') \
+                                   .gsub(/<\/li>/, '') \
+                                   .gsub(/<ul>/, '') \
+                                   .gsub(/<\/ul>/, '') \
+                                   .html_safe %>
+        <% end %>
+      <% end %>
+    </td>
+    <td class="sidebar round">
+      <%= render 'user_info' %>
+      <% unless @users.empty? %>
+        <% @users.each do |user| %>
+          <%= link_to gravatar_for(user, :size => 30), user %>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
+</table>
